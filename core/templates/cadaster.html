@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="site-content">
+        <div class="container">
+            <h2 class="text-center mt-5">CADASTRAR LIVRO</h2>
+            <a href="{% url 'list' %}"><button type="submit" class="btn btn-info" name="voltar"><i class="fas fa-arrow-circle-left"></i> Voltar ao ínicio</button></a>
+            <div class="d-flex justify-content-center">
+                <form method="post" class="py-5" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="cols-sm-6">
+                    {{ form.as_p }}
+                    </div>
+                    <button type="submit" class="btn btn-info" name="enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Ínicio cabeçalho-->
+      {% include 'footer.html' %}
+    <!--Fim cabeçalho-->
+
+{% endblock %}

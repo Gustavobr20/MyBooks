@@ -1,0 +1,46 @@
+{% load static %}
+{% block content %}
+<main class="site-content">
+  <h2 class="text-center mt-5">BIBLIOTECA</h2>
+    <div class="container mt-4">
+      <a href="{% url 'create' %}"><button type="button" class="btn btn-outline-info mb-4"><i class="fas fa-plus"></i> Novo</button></a>
+      {% if books %}
+      <table class="table table-hover table-responsive-sm">
+        <thead class="text-center bg-info text-light">
+          <tr>
+            <th scope="col ">Id</th>
+            <th scope="col">Lido</th>
+            <th scope="col">Título</th>
+            <th scope="col">Resenha</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        {% for b in books %}
+        <tbody class="text-center">
+          <tr>
+            <th scope="col">{{ b.id }}</th>
+
+            {% if b.lido %}
+            <th scope="col" class="text-success"><i class="fas fa-check-circle"></i></th>
+            {% else %}
+            <th scope="col" class="text-warning"><i class="fas fa-clock"></i></i></th>
+            {% endif %}
+
+            <th scope="col">{{ b.titulo }}</th>
+            <th scope="col">{{ b.resenha }}</th>
+            <th scope="col"><a href="{% url 'detail' b.id %}" class="btn btn-info btn-sm"><i class="fas fa-info-circle"></i></a></th>
+            <th scope="col"><a href="{% url 'update' b.id %}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></th>
+            <th scope="col"><a href="{% url 'delete' b.id %}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></th>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      {% else %}
+      <h3 class="text-center">Não existem livros cadastrados :(</h3>
+      {% endif %}
+    </div>
+
+  {% endblock %}
+</main>

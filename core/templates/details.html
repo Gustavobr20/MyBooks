@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5 site-content">
+    <h3 class="text-center">Detalhes do livro: {{ book }}</h3>
+    <a href="{% url 'list' %}"><button type="submit" class="btn btn-info mb-5 mt-3" name="voltar"><i class="fas fa-arrow-circle-left"></i> Voltar ao ínicio</button></a>
+    <div class="mt-5 bg-light">
+    <p>Titulo: {{ book.titulo }}</p>
+    <p>Resenha: {{ book.resenha }}</p>
+    {% if book.lido %}
+    <p>Lido: Sim</p>
+    {% else %}
+    <p>Lido: Não</p>
+    {% endif %}
+    <p>Criado em: {{ book.criado_em }}</p>
+    <p>Modificado em: {{ book.modificado_em }}</p>
+    </div>
+</div>
+
+    <!--Começo rodapé-->
+        {% include 'footer.html' %}
+    <!--Fim do rodapé-->
+
+{% endblock %}
