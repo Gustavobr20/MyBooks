@@ -15,10 +15,8 @@ Sistema simples para controle de livros pessoais e também para pratica de cria�
 
 <h2>Como utilizar</h2>
 
-1º Acessar o ambiente virtual;<br>
-2ª Instalar as bibliotecas utilizadas no projeto; (pip install requirements.txt)<br>
-3º Fazer as migrações dos modelos (python manage.py migrate);<br>
-4º Criar um superuser (python manage.py createsuper) OBS: Essa opção é so se quiser dar uma olhada na administração do Django;<br>
-5º Pronto é só rodar o servidor (python manage.py runserver) e acessar a página principal: http://127.0.0.1:8000/.
+1º Acessar o ambiente virtual (.\venv\Scripts\activate);<br>
+2ª Instalar as bibliotecas utilizadas no projeto; (pip install -r requirements.txt);<br>
+3º Pronto é só rodar o servidor (python manage.py runserver) e acessar a página principal: http://127.0.0.1:8000/.
 
 OBS.: TODOS OS COMANDOS CITADOS ACIMA SÃO ESCRITOS ATRAVÉS DO TERMINAL.
