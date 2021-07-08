@@ -19,7 +19,7 @@ class BookDetailView(DetailView):
 
 
 class BookCreateView(CreateView):
-    template_name = 'cadaster.html'
+    template_name = 'form_book.html'
 
     model = Book
     fields = '__all__'
@@ -27,7 +27,7 @@ class BookCreateView(CreateView):
 
 
 class BookUpdateView(UpdateView):
-    template_name = 'cadaster.html'
+    template_name = 'form_book.html'
 
     model = Book
     fields = '__all__'
